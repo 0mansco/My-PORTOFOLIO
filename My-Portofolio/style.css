@@ -1,0 +1,239 @@
+/** @format */
+
+:root {
+  --bg-first: #0b0d12;
+  --bg-color: #0b1d0b;
+  --bg-card: #141923;
+  --btn-color: #0943f3;
+  --text-color: #f4f6fa;
+  --text-sekunder: #a6afbf;
+}
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*  Opening Body*/
+body {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-card);
+  background-image: url(asset/--bg-card-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  line-height: 1.5;
+  padding: 10px;
+  /* border: 1px solid var(--btn-color); */
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.container {
+  width: 100%;
+  margin: auto;
+}
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 5px auto;
+  border-bottom: 1px solid #7cf7c4;
+  position: relative;
+}
+    /* .navbar { 
+  display: flex;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  gap: 4rem;
+  margin-right: 50px;
+}  */
+
+.header h2 {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-size: clamp(2rem, 4vw, 2rem);
+}
+.header span {
+  color: tomato;
+}
+
+.navbar {
+  display: none;
+}
+.navbar a {
+  display: block;
+}
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+}
+.hero-section h1 {
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  text-shadow: 0 0 1px;
+}
+.heading {
+  font-family: "Inter";
+  font-weight: 600;
+  margin-top: -2px;
+  font-size: clamp(0.9rem, 3vw, 2rem);
+}
+.hero-section-01 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.intro-text p {
+  font-size: clamp(0.8rem, 3vw, 2rem);
+}
+.profil-card img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20%;
+  padding: 5px;
+  border: 2px solid var(--text-sekunder);
+  box-shadow: 0 8px 25px var(--btn-color);
+}
+.skill button {
+  margin-top: 5px;
+  width: 100px;
+  height: auto;
+  color: rgb(63, 223, 34);
+  padding: 5px 7px;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: 0 4px 15px var(--btn-color);
+  border-radius: 5px;
+  border: none;
+}
+figcaption {
+  text-align: center;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  text-decoration: underline;
+}
+.menu-toggle {
+  display:none;
+}
+.hamburger {
+  display: flex;
+  width:1.75rem;
+  height: 1.23rem;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 101;
+  position: relative;
+  right: 0;
+
+}
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transform: 0.3s ease;
+  opacity: 0.3s ease;
+  transform-origin: center;
+}
+.menu-toggle:checked ~ .navbar {
+  position: absolute;
+  top: 100%;
+  left:0;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #0b0d12;
+}
+.menu-toggle:checked ~ .navbar a {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(8px)rotate(45deg);
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-8px)rotate(-45deg);
+}
+
+@media (min-width:420px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    color: #fff;
+    margin-right: 50px;
+  }
+  .navbar a {
+    display: block;
+    justify-content: center;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+/* @media (max-width: 460px) { */
+  /* .menu-toggle {
+    position: absolute;
+    opacity: 0;
+  } */
+  /* .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.75rem;
+    height: 1.25rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    transform-origin: center;
+  }
+   /* .navbar {
+    display: none;
+} */
+  /* .menu-toggle:checked ~ .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar {
+    display: none;
+  } */ */ */
