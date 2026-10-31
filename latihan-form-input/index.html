@@ -1,0 +1,158 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan form input</title>
+    <meta name="description" content="pembuatan form registrasi" />
+  <style>
+    .photo {
+      background-color: aqua;
+    }
+  </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="Username">Username</label>
+      <input
+        type="text"
+        id="Username"
+        pattern="(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{6,12}"
+        title="Username harus berupa     angka dan hururf minimal 6-12 karakter"
+        required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required minlength="8" />
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <form action="">
+      <label for="bola">
+        <input type="checkbox" name="hobi" id="bola" value="bola" />
+        Sepak Bola</label
+      >
+
+      <label for="memancing">
+        <input type="checkbox" name="hobi" id="memancing" value="memancing" />
+        memancing
+      </label>
+
+      <label for="membaca">
+        <input type="checkbox" name="hobi" id="membaca" value="membaca" checked />
+        membaca
+      </label>
+
+      <select name="kota" id="kota">
+        <option value="magelang">Magelang</option>
+        <option value="yogyakarta" selected>Yogyakarta</option>
+      </select>
+    </form>
+
+    <form action="">
+      <label for="transfer">
+        <input type="radio" name="transfer" id="transfer" value="Transfer" checked>
+        Transfer Bank
+      </label>
+
+      <label for="cod">
+        <input type="radio" name="transfer" id="cod" value="cod">
+        COD
+      </label>
+
+      <label for="e-wallet" >
+        <input type="radio" name="transfer" id="e-wallet" value="e-wallet">
+        E-Wallet
+      </label>
+
+      <label for="sepatu">
+        <input type="number" name="barang" id="sepatu" min="2" max="20" step="3"  required>
+        sepatu
+      </label>
+
+      <form action="">
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username" autofocus>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" autofocus>
+      </form>
+    </form>
+
+    <label for="telepon">Nomor Telepon</label>
+    <input type="text" name="nomor-telepon" id="telepon" inputmode="tel">
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" autofocus enterkeyhint="next">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" enterkeyhint="done">
+
+    <label for="file">File</label>
+    <input type="file" name="file" id="file" multiple >
+
+
+    <label for="dokumen">Dokumen Produk</label>
+    <input type="file" name="dokumen" id="dokumen" multiple accept=".pdf, .png">
+
+    <label for="selfie">Selfie</label>
+    <input type="file" name="selfie" id="selfie" accept="image/*" capture="user">
+
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" required enterkeyhint="next" pattern="[A-Za-z0-9]{6,12}">
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required enterkeyhint="send" pattern="[A-Za-z0-9]{6,12}">
+    </form>
+
+    <button type="submit" form="login-form">Login</button>
+
+    <form id="register-form" action="/register" method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" required minlength="6">
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required >
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required minlength="8">
+
+      <button type="submit" >Daftar</button>
+    </form>
+
+    <button type="reset" form="register-form">Reset</button>
+
+
+    <form action="/register" method="post">
+  <h1>Registrasi Akun</h1>
+
+  <label for="nama">Nama Lengkap</label>
+  <input type="text" id="nama" name="nama" pattern="[A-Za-z0-9]{6,20}" required minlength="6" enterkeyhint="next">
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" required minlength="8" pattern="(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,12}" enterkeyhint="done">
+
+  <button type="submit">Daftar</button>
+</form>
+<label for="username">Username</label>
+<input type="text" name="username" id="username" required enterkeyhint="next" minlength="6" aria-describedby="username-help">
+
+<label for="email">Email</label>
+<input type="email" name="email" id="email" aria-describedby="email-help" required>
+
+<label for="password">Password</label>
+<input type="password" name="password" id="password" minlength="8" aria-describedby="password-help" required pattern="(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,20}">
+
+<small id="username-help">Username Minimal 6 karakter </small>
+<small id="email-help">Email wajib di isi sesuai format email</small>
+<small id="password-help">Password terdiri dari 1 angka 1 huruf dan minimal 8 karakter </small>
+</htm>
