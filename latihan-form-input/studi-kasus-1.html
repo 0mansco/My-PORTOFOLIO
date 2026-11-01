@@ -1,0 +1,148 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Registrasi</title>
+    <meta name="description" content="form registrasi" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 400px);
+        margin: 2rem auto;
+        padding: 0.5rem;
+        border: 1px solid #fff;
+        background-color: rgb(30, 29, 29);
+        color: #fff;
+        border-radius: 15px;
+      }
+      small {
+        display: none;
+      }
+      .container form h1 {
+        text-align: center;
+      }
+      .container h2, input, label  {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        padding: 0.3rem;
+        margin: auto;
+        font-size: 1rem;
+        text-transform: capitalize;
+      }
+    .input-radio {
+      display:grid;
+      width: 80%;
+      margin: auto;
+      grid-template-columns: repeat(3,1fr);
+    }
+    .input-radio input, label {
+      font-size: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/register" id="register-form" method="post">
+        <h1>Registrasi Akun</h1>
+        <label for="nama">Nama Lengkap</label>
+        <input
+          type="text"
+          name="nama"
+          id="nama"
+          required
+          minlength="3"
+          enterkeyhint="next"
+          placeholder="Enter your name"
+          aria-describedby="format-nama"
+          inputmode="text"
+          autocomplete="name" />
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          minlength="6"
+          maxlength="20"
+          required
+          pattern="[A-Za-z0-9]{6,20}"
+          enterkeyhint="next"
+          placeholder="Username "
+          aria-describedby="format-user"
+          inputmode="text"
+          autocomplete="username" />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          enterkeyhint="next"
+          placeholder="Enter your email"
+          aria-describedby="format-email"
+          inputmode="email"
+          autocomplete="email" />
+        <label for="password">Make password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          minlength="8"
+          maxlength="20"
+          pattern="(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,20}"
+          enterkeyhint="next"
+          placeholder="make password"
+          autocomplete="new-password"
+          inputmode="text"
+          aria-describedby="make-password" />
+        <small id="make-password">add password</small>
+
+        <label for="confirm-password">confirm password</label>
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          required
+          minlength="8"
+          maxlength="20"
+          pattern="(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,20}"
+          enterkeyhint="done"
+          placeholder="enter your password"
+          aria-describedby="confirm-password-help"
+          inputmode="text"
+          autocomplete="new-password" />
+        <small id="confirm-password-help">Enter your password</small>
+        <div class="input-radio">
+        <h2>Gender</h2>
+        <label for="man">
+          <input type="radio" name="gender" id="man" value="man" />
+          Man
+        </label>
+        <label for="women">
+          <input type="radio" name="gender" id="women" value="women" />
+          Women
+        </label>
+
+        <label for="checkbox">  
+        <input type="checkbox" name="syarat" id="checkbox" value="ketentuan" required>
+        Syarat & Ketentuan
+        </label><br>
+        <button type="submit" formaction="login" formmethod="get">Daftar
+        </button>
+        </div>
+      </form>
+
+      <button type="reset" form="register-form">Reset</button>
+    </div>
+  </body>
+</html>
