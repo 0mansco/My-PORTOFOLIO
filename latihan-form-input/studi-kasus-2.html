@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan form - Studi Kasus 2</title>
+    <meta name="description" content="latihan form input studi kasus 2">
+</head>
+<body>
+    <fieldset >
+        <legend>Jenis Kelamin</legend>
+        <label for="laki-laki">
+            <input type="radio" name="gender" id="laki-laki" value="Laki-Laki" required>
+            Laki-Laki
+        </label>
+        <label for="perempuan">
+            <input type="radio" name="gender" id="perempuan" value="Perempuan">
+            Perempuan
+        </label>
+    </fieldset>
+
+    <fieldset>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required
+        minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}" aria-describedby="username-help">
+        <small id="username-help">Username harus berupa angka dan huruf minimal 6-20 karakter</small>
+    </fieldset>
+</body>
+</html>

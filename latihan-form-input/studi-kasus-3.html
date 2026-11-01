@@ -1,0 +1,202 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project E-commerce Registration</title>
+    <meta
+      name="description"
+      content="Form registrasi untuk membuat akun baru di e-commerce" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f1f1;
+        color: #fff;
+        padding: 15px;
+        margin: auto;
+        text-align: left;
+      }
+      form {
+        max-width: 500px;
+        color: #030303;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #169795;
+        padding: 20px;
+        border-radius: 10px;
+        
+        
+      }
+
+      input,
+      label {
+        margin-bottom: 10px;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        text-align: left;
+        width: 100%;
+        margin: auto;
+        text-transform: capitalize;
+        font-size: 0.875rem;
+        border:none;
+      }
+
+      small {
+        font-size: 0.75rem;
+        color: #fff;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 20px;
+        width:50%;
+        padding:15px 0;
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background: linear-gradient(50deg, #2b65ff, #8000ff);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        color:black;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 0px 2px 4px #fff, 0 0 25px #fff, 0 0 5px #fff;
+      }
+
+      fieldset {
+        display: flex;
+        border: 1px solid #fff;
+        padding: 5px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      fieldset legend {
+        font-weight: bold;
+        margin-bottom: 5px;
+        border: 1px solid #fff;
+        padding: 1px 2px;
+        border-radius: 5px;
+      }
+
+      fieldset label {
+        display:grid;
+        grid-template-columns: 20px auto;
+        margin-right: 10px;}
+    </style>
+  </head>
+  <body>
+    <form action="/register" method="post" id="register-form">
+      <h1>Buat Akun Baru</h1>
+      <p>Daftarkan akun untuk mulai berbelanja</p>
+      <hr />
+      <h2>Informasi Akun</h2>
+      <label for="user">Nama Lengkap</label>
+      <input
+        type="text"
+        id="user"
+        name="user"
+        required
+        minlength="6"
+        maxlength="20"
+        pattern="[A-Za-z0-9]{6,20}"
+        enterkeyhint="next"
+        aria-describedby="user-help"
+        placeholder="Masukkan nama lengkap" />
+      <small id="user-help"
+        >Nama lengkap harus berupa huruf minimal 6-20 karakter</small
+      >
+
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        minlength="6"
+        maxlength="20"
+        pattern="[A-Za-z0-9]{6,20}"
+        enterkeyhint="next"
+        aria-describedby="username-help"
+        placeholder="Masukkan username" />
+      <small id="username-help"
+        >Username harus berupa angka dan huruf minimal 6-20 karakter</small
+      >
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        aria-describedby="email-help"
+        placeholder="Masukkan email" />
+      <small id="email-help">Masukkan email yang valid</small>
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="8"
+        maxlength="20"
+        pattern="[A-Za-z0-9]{8,20}"
+        aria-describedby="password-help"
+        placeholder="Masukkan password" />
+      <small id="password-help"
+        >Password harus berupa huruf dan angka minimal 8 karakter</small
+      >
+
+      <label for="confirm-password">Konfirmasi Password</label>
+      <input
+        type="password"
+        id="confirm-password"
+        name="confirm-password"
+        required
+        minlength="8"
+        pattern="[A-Za-z0-9]{8,20}"
+        aria-describedby="confirm-password-help"
+        placeholder="Konfirmasi password" />
+      <small id="confirm-password-help"
+        >Konfirmasi password harus sama dengan password</small >
+
+        <fieldset>
+          <legend>Jenis Kelamin</legend>
+          <label for="laki-laki">
+            <input type="radio" name="gender" id="laki-laki" value="Laki-Laki" required>
+            Laki-Laki
+          </label>
+          <label for="perempuan">
+            <input type="radio" name="gender" id="perempuan" value="Perempuan">
+            Perempuan
+          </label>
+        </fieldset>
+        <button type="submit">Daftar</button>
+      </form>
+    </body>
+  </html>
