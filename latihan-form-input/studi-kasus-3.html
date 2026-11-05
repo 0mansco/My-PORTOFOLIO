@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,93 +20,11 @@
       body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #f4f1f1;
-        color: #fff;
+        color: #050505;
         padding: 15px;
         margin: auto;
         text-align: left;
       }
-      form {
-        max-width: 500px;
-        color: #030303;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        background-color: #169795;
-        padding: 20px;
-        border-radius: 10px;
-        
-        
-      }
-
-      input,
-      label {
-        margin-bottom: 10px;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        border: none;
-        text-align: left;
-        width: 100%;
-        margin: auto;
-        text-transform: capitalize;
-        font-size: 0.875rem;
-        border:none;
-      }
-
-      small {
-        font-size: 0.75rem;
-        color: #fff;
-      }
-
-      button {
-        background-color: #4caf50;
-        color: white;
-        cursor: pointer;
-        text-transform: uppercase;
-        text-align: center;
-        margin-top: 20px;
-        width:50%;
-        padding:15px 0;
-        border-radius: 15px;
-        margin: auto;
-        margin-top: 20px;
-      }
-
-      button:hover {
-        background: linear-gradient(50deg, #2b65ff, #8000ff);
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 10px;
-        color:black;
-        font-size: 1.7rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-shadow: 0px 2px 4px #fff, 0 0 25px #fff, 0 0 5px #fff;
-      }
-
-      fieldset {
-        display: flex;
-        border: 1px solid #fff;
-        padding: 5px;
-        margin-top: 10px;
-        border-radius: 5px;
-        font-size: 1rem;
-      }
-      fieldset legend {
-        font-weight: bold;
-        margin-bottom: 5px;
-        border: 1px solid #fff;
-        padding: 1px 2px;
-        border-radius: 5px;
-      }
-
-      fieldset label {
-        display:grid;
-        grid-template-columns: 20px auto;
-        margin-right: 10px;}
     </style>
   </head>
   <body>
@@ -115,20 +33,18 @@
       <p>Daftarkan akun untuk mulai berbelanja</p>
       <hr />
       <h2>Informasi Akun</h2>
-      <label for="user">Nama Lengkap</label>
+      <label for="full-name">Nama Lengkap</label>
       <input
         type="text"
-        id="user"
-        name="user"
+        id="full-name"
+        name="full-name"
         required
-        minlength="6"
-        maxlength="20"
-        pattern="[A-Za-z0-9]{6,20}"
+        minlength="3"
         enterkeyhint="next"
-        aria-describedby="user-help"
+        aria-describedby="help-full-name"
         placeholder="Masukkan nama lengkap" />
-      <small id="user-help"
-        >Nama lengkap harus berupa huruf minimal 6-20 karakter</small
+      <small id="help-full-name"
+        >Masukkan nama lengkap Anda minimal 3 karakter</small
       >
 
       <label for="username">Username</label>
@@ -165,7 +81,8 @@
         required
         minlength="8"
         maxlength="20"
-        pattern="[A-Za-z0-9]{8,20}"
+        pattern="(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,20}"
+        autocomplete="new-password"
         aria-describedby="password-help"
         placeholder="Masukkan password" />
       <small id="password-help"
@@ -179,24 +96,60 @@
         name="confirm-password"
         required
         minlength="8"
-        pattern="[A-Za-z0-9]{8,20}"
+        maxlength="20"
+        pattern="(?=.*[0-9])(?=.*[A-Za-z])[A-Za-z0-9]{8,20}"
+        autocomplete="new-password"
         aria-describedby="confirm-password-help"
         placeholder="Konfirmasi password" />
       <small id="confirm-password-help"
-        >Konfirmasi password harus sama dengan password</small >
+        >Konfirmasi password harus sama dengan password</small
+      >
+      <fieldset class="input-radio">
+        <legend>Jenis Kelamin</legend>
+        <label for="laki-laki">
+          <input
+            class="radio-label"
+            type="radio"
+            name="gender"
+            id="laki-laki"
+            value="Laki-Laki"
+            required />
+          Laki-Laki
+        </label>
+        <label for="perempuan">
+          <input
+            type="radio"
+            name="gender"
+            id="perempuan"
+            value="Perempuan"
+            class="radio-label" />
+          Perempuan
+        </label>
+      </fieldset>
+      <div class="btn-label">
+        <label for="terms">
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            required
+            value="accepted" />Syarat & Ketentuan
+        </label>
+        <a href="/terms.html"> Baca Syarat & ketentuan</a>
 
-        <fieldset>
-          <legend>Jenis Kelamin</legend>
-          <label for="laki-laki">
-            <input type="radio" name="gender" id="laki-laki" value="Laki-Laki" required>
-            Laki-Laki
-          </label>
-          <label for="perempuan">
-            <input type="radio" name="gender" id="perempuan" value="Perempuan">
-            Perempuan
-          </label>
-        </fieldset>
-        <button type="submit">Daftar</button>
-      </form>
-    </body>
-  </html>
+        <button type="submit" formaction="/register" formmethod="post">
+          Daftar
+        </button>
+
+        <button type="reset" form="register-form">Reset</button>
+        <button
+          type="submit"
+          form="register-form"
+          formaction="/draft"
+          formmethod="post">
+          simpan draft
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
